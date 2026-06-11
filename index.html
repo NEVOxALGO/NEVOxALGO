@@ -32,24 +32,18 @@
   .main{padding:2rem;max-width:1400px;margin:0 auto;}
   .tab-content{display:none;}
   .tab-content.active{display:block;}
-
-  /* STATS */
   .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem;}
   .stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;}
   .stat-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;font-family:'Space Mono',monospace;}
   .stat-value{font-size:28px;font-weight:600;line-height:1;}
   .stat-value.green{color:var(--green)}.stat-value.red{color:var(--red)}.stat-value.amber{color:var(--amber)}.stat-value.blue{color:var(--blue)}
   .stat-sub{font-size:12px;color:var(--muted);margin-top:6px;}
-
-  /* FILTERS */
   .section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
   .section-title{font-family:'Space Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);}
   .filter-row{display:flex;gap:8px;flex-wrap:wrap;}
   .filter-btn{font-size:12px;padding:4px 12px;border-radius:20px;border:1px solid var(--border2);background:transparent;color:var(--muted);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.15s;}
   .filter-btn.active{background:var(--accent);border-color:var(--accent);color:white;}
   .filter-btn:hover:not(.active){color:var(--text);}
-
-  /* ALERT CARDS */
   .alerts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1rem;margin-bottom:2rem;}
   .alert-card{background:var(--bg2);border-radius:14px;padding:1.25rem;cursor:pointer;transition:transform 0.15s;position:relative;overflow:hidden;}
   .alert-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
@@ -77,8 +71,6 @@
   .timestamp{font-size:11px;color:var(--muted);font-family:'Space Mono',monospace;}
   .action-btn{font-size:11px;padding:5px 14px;border-radius:20px;border:1px solid var(--border2);background:transparent;color:var(--text);cursor:pointer;transition:all 0.15s;}
   .action-btn:hover{background:var(--bg3);}
-
-  /* WEBHOOK */
   .webhook-panel{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:2rem;}
   .webhook-header{display:flex;align-items:center;margin-bottom:1rem;}
   .webhook-title{font-family:'Space Mono',monospace;font-size:13px;color:var(--text);}
@@ -92,8 +84,6 @@
   .connect-btn:hover{opacity:0.85;}
   .simulate-btn{padding:10px 16px;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;color:var(--amber);font-size:13px;cursor:pointer;white-space:nowrap;}
   .simulate-btn:hover{background:var(--amber-dim);border-color:var(--amber);}
-
-  /* SCREENER */
   .screener-controls{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1.5rem;}
   .controls-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem;margin-bottom:1.25rem;}
   .control-group{display:flex;flex-direction:column;gap:6px;}
@@ -109,26 +99,14 @@
   .loading .spinner{display:block;}
   @keyframes spin{to{transform:rotate(360deg)}}
   .scan-status-txt{font-size:12px;color:var(--muted);font-family:'Space Mono',monospace;}
-
-  /* API QUOTA BAR */
-  .quota-row{display:flex;align-items:center;gap:12px;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);}
-  .quota-label{font-size:11px;color:var(--muted);font-family:'Space Mono',monospace;white-space:nowrap;}
-  .quota-bar{flex:1;height:6px;background:var(--bg3);border-radius:3px;overflow:hidden;}
-  .quota-fill{height:100%;border-radius:3px;transition:width 0.4s;}
-  .quota-num{font-size:12px;font-family:'Space Mono',monospace;font-weight:700;white-space:nowrap;}
-
-  /* PROGRESS */
   .progress-wrap{margin-bottom:1.25rem;display:none;}
   .progress-label{font-size:12px;color:var(--muted);margin-bottom:6px;font-family:'Space Mono',monospace;}
   .progress-bar{height:4px;background:var(--bg3);border-radius:2px;overflow:hidden;}
   .progress-fill{height:100%;background:var(--accent);border-radius:2px;transition:width 0.15s;}
-
-  /* INFO CHIPS */
   .info-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem;}
   .info-chip{font-size:11px;color:var(--muted);font-family:'Space Mono',monospace;background:var(--bg3);padding:4px 10px;border-radius:6px;border:1px solid var(--border);}
   .info-chip span{color:var(--text);}
-
-  /* TABLE */
+  .debug-panel{display:none;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:1rem;margin-bottom:1rem;font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);max-height:160px;overflow-y:auto;}
   .screener-table-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:14px;overflow:auto;}
   .screener-table{width:100%;border-collapse:collapse;min-width:820px;}
   .screener-table th{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;padding:12px 14px;text-align:left;font-family:'Space Mono',monospace;border-bottom:1px solid var(--border);background:var(--bg3);cursor:pointer;user-select:none;white-space:nowrap;}
@@ -153,13 +131,10 @@
   .score-bar-fill{height:100%;border-radius:3px;}
   .score-bar-num{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;min-width:30px;}
   .up{color:var(--green)}.down{color:var(--red)}.mono{font-family:'Space Mono',monospace;}
-
-  /* WATCHLIST PANEL */
   .watchlist-panel{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-bottom:1.5rem;}
   .watchlist-title{font-family:'Space Mono',monospace;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;}
   .watchlist-input-row{display:flex;gap:8px;margin-bottom:1rem;}
   .watchlist-input{flex:1;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;padding:8px 14px;color:var(--text);font-family:'Space Mono',monospace;font-size:13px;outline:none;text-transform:uppercase;}
-  .watchlist-input::placeholder{text-transform:none;font-size:12px;}
   .watchlist-input:focus{border-color:var(--accent);}
   .add-btn{padding:8px 18px;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-size:13px;cursor:pointer;white-space:nowrap;}
   .add-btn:hover{border-color:var(--accent);color:var(--accent);}
@@ -167,18 +142,13 @@
   .ticker-chip{display:flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;padding:5px 12px;font-family:'Space Mono',monospace;font-size:12px;color:var(--text);}
   .chip-remove{background:none;border:none;color:var(--muted);cursor:pointer;font-size:14px;line-height:1;padding:0;}
   .chip-remove:hover{color:var(--red);}
-
-  /* EMPTY */
   .empty-state{text-align:center;padding:4rem 2rem;color:var(--muted);}
   .empty-icon{font-size:48px;margin-bottom:1rem;opacity:0.3;}
   .empty-title{font-size:16px;font-weight:500;color:var(--text);margin-bottom:8px;}
   .empty-sub{font-size:13px;}
-
-  /* TOAST */
   .toast{position:fixed;bottom:2rem;right:2rem;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:12px 20px;font-size:13px;color:var(--text);z-index:1000;transform:translateY(100px);opacity:0;transition:all 0.3s;max-width:340px;}
   .toast.show{transform:translateY(0);opacity:1;}
   .dismiss-btn{background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px;padding:0 4px;line-height:1;vertical-align:middle;}
-
   @media(max-width:768px){.stats-row{grid-template-columns:repeat(2,1fr)}.main{padding:1rem}}
 </style>
 </head>
@@ -199,7 +169,7 @@
 
 <div class="main">
 
-  <!-- ══ ALERTS TAB ══ -->
+  <!-- ALERTS TAB -->
   <div class="tab-content active" id="tab-alerts">
     <div class="stats-row">
       <div class="stat-card"><div class="stat-label">Total Alerts Today</div><div class="stat-value blue" id="stat-total">0</div><div class="stat-sub">signals fired</div></div>
@@ -231,12 +201,10 @@
     <div class="alerts-grid" id="alerts-grid"></div>
   </div>
 
-  <!-- ══ SCREENER TAB ══ -->
+  <!-- SCREENER TAB -->
   <div class="tab-content" id="tab-screener">
-
-    <!-- Custom watchlist -->
     <div class="watchlist-panel">
-      <div class="watchlist-title">Custom Watchlist — tickers to always scan first</div>
+      <div class="watchlist-title">Custom Watchlist — tickers to scan</div>
       <div class="watchlist-input-row">
         <input class="watchlist-input" id="watchlist-input" type="text" placeholder="Type a ticker e.g. TSLA and press Add" onkeydown="if(event.key==='Enter')addWatchlistTicker()"/>
         <button class="add-btn" onclick="addWatchlistTicker()">+ Add</button>
@@ -245,25 +213,20 @@
       <div class="watchlist-chips" id="watchlist-chips"></div>
     </div>
 
-    <!-- Controls -->
     <div class="screener-controls">
       <div class="controls-grid">
-        <div class="control-group"><label class="control-label">Min ATR ($)</label><input class="control-input" id="sc-atr" type="number" value="8" min="1" max="50" step="0.5"/></div>
+        <div class="control-group"><label class="control-label">Min ATR ($)</label><input class="control-input" id="sc-atr" type="number" value="3" min="1" max="50" step="0.5"/></div>
         <div class="control-group"><label class="control-label">Min Avg Vol (M)</label><input class="control-input" id="sc-vol" type="number" value="1" min="0.1" step="0.1"/></div>
         <div class="control-group"><label class="control-label">Min Price ($)</label><input class="control-input" id="sc-price-min" type="number" value="20" min="1"/></div>
         <div class="control-group"><label class="control-label">Max Price ($)</label><input class="control-input" id="sc-price-max" type="number" value="600" min="10"/></div>
         <div class="control-group"><label class="control-label">Setup Type</label>
           <select class="control-select" id="sc-type"><option value="both">Both</option><option value="bounce">Bounce only</option><option value="reject">Reject only</option></select></div>
         <div class="control-group"><label class="control-label">Min Score</label>
-          <select class="control-select" id="sc-min-score"><option value="0">Show all</option><option value="5">5+ only</option><option value="0" selected>Show all</option><option value="8">8+ only</option></select></div>
+          <select class="control-select" id="sc-min-score"><option value="0" selected>Show all</option><option value="5">5+ only</option><option value="7">7+ only</option><option value="8">8+ only</option></select></div>
       </div>
       <div class="scan-row">
         <button class="scan-btn" id="scan-btn" onclick="runScreener()"><div class="spinner" id="scan-spinner"></div>Run Screener</button>
-        <span class="scan-status-txt" id="scan-status">Powered by Finnhub — 60 calls/min, no daily limit</span>
-      </div>
-      <div class="quota-row">
-        <span class="quota-label">Finnhub — no daily limit</span>
-        <span class="quota-num" id="quota-num" style="color:var(--green)">Ready</span>
+        <span class="scan-status-txt" id="scan-status">Powered by Finnhub — best run after 4PM ET close</span>
       </div>
     </div>
 
@@ -272,7 +235,7 @@
       <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
     </div>
 
-    <div id="debug-panel" style="display:none;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:1rem;margin-bottom:1rem;font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);max-height:160px;overflow-y:auto;">
+    <div class="debug-panel" id="debug-panel">
       <div style="color:var(--amber);margin-bottom:6px;font-size:12px;">DEBUG LOG</div>
       <div id="debug-log"></div>
     </div>
@@ -280,7 +243,6 @@
     <div class="info-row" id="screener-info-row" style="display:none;">
       <div class="info-chip">Scanned <span id="info-scanned">—</span></div>
       <div class="info-chip">Passed filters <span id="info-passed">—</span></div>
-      <div class="info-chip">Calls used <span id="info-calls">—</span></div>
       <div class="info-chip">Last run <span id="info-time">—</span></div>
     </div>
 
@@ -310,7 +272,7 @@
           <th>Action</th>
         </tr></thead>
         <tbody id="screener-body">
-          <tr><td colspan="11"><div class="empty-state"><div class="empty-icon">🔍</div><div class="empty-title">Ready to scan</div><div class="empty-sub">Add tickers to your watchlist or load defaults, then hit Run Screener</div></div></td></tr>
+          <tr><td colspan="11"><div class="empty-state"><div class="empty-icon">🔍</div><div class="empty-title">Ready to scan</div><div class="empty-sub">Load your watchlist and hit Run Screener after market close</div></div></td></tr>
         </tbody>
       </table>
     </div>
@@ -322,18 +284,6 @@
 <script>
 const FH_KEY = 'd8f5gihr01qub7kfvgcgd8f5gihr01qub7kfvgd0';
 const FH_BASE = 'https://finnhub.io/api/v1';
-
-// ── FINNHUB — no daily quota ──
-let callsUsed = 0;
-function trackCall() { callsUsed++; }
-function updateQuotaBar() {
-  const fill = document.getElementById('quota-fill');
-  const num  = document.getElementById('quota-num');
-  if (!fill || !num) return;
-  fill.style.width = '0%';
-  num.textContent = callsUsed + ' calls this session';
-  num.style.color = '#22c55e';
-}
 
 // ── TABS ──
 function switchTab(id, el) {
@@ -356,21 +306,35 @@ function updateClock() {
 setInterval(updateClock, 1000);
 updateClock();
 
+// ── DEBUG ──
+function debugLog(ticker, msg) {
+  const panel = document.getElementById('debug-panel');
+  const log = document.getElementById('debug-log');
+  if (!panel || !log) return;
+  panel.style.display = 'block';
+  const line = document.createElement('div');
+  line.style.cssText = 'margin-bottom:3px;border-bottom:1px solid rgba(255,255,255,0.04);padding-bottom:3px;';
+  const color = msg.includes('OK') ? '#22c55e' : (msg.includes('Error') || msg.includes('No ') || msg.includes('NULL') || msg.includes('timeout')) ? '#ef4444' : '#f59e0b';
+  line.innerHTML = '<span style="color:' + color + '">' + ticker + '</span> — ' + msg;
+  log.appendChild(line);
+  panel.scrollTop = panel.scrollHeight;
+}
+
 // ── WATCHLIST ──
-const DEFAULT_WATCHLIST = ['TSLA','NVDA','AAPL','AMZN','NFLX','MSFT','META','AMD','GOOGL','SHOP','COIN','MSTR','PLTR','SMCI','ARM','CRWD','PANW','SNOW','UBER','MELI'];
+const DEFAULT_WATCHLIST = ['TSLA','NVDA','AAPL','MSFT','META','AMD','GOOGL','NFLX','AMZN','SHOP','COIN','MSTR','PLTR','SMCI','ARM','CRWD','PANW','SNOW','UBER','MELI'];
 let watchlist = JSON.parse(localStorage.getItem('nevofit_watchlist') || '[]');
 
 const SECTORS = {
-  'AAPL':'Tech','MSFT':'Tech','NVDA':'Tech','AMD':'Tech','INTC':'Tech','QCOM':'Tech','TXN':'Tech','AVGO':'Tech','AMAT':'Tech','LRCX':'Tech','KLAC':'Tech','MU':'Tech','MRVL':'Tech','ARM':'Tech','SMCI':'Tech',
-  'AMZN':'Consumer','TSLA':'Consumer','COST':'Consumer','NKE':'Consumer','SBUX':'Consumer','MCD':'Consumer','HD':'Consumer','LOW':'Consumer','MELI':'Consumer','SHOP':'Consumer','UBER':'Consumer',
-  'GOOGL':'Comm','META':'Comm','NFLX':'Comm','DIS':'Comm','CMCSA':'Comm','VZ':'Comm',
-  'JPM':'Finance','BAC':'Finance','GS':'Finance','WFC':'Finance','V':'Finance','MA':'Finance','AXP':'Finance','COIN':'Finance','MSTR':'Finance',
-  'JNJ':'Health','UNH':'Health','LLY':'Health','MRK':'Health','ABBV':'Health','PFE':'Health','TMO':'Health','REGN':'Health','VRTX':'Health',
+  'AAPL':'Tech','MSFT':'Tech','NVDA':'Tech','AMD':'Tech','INTC':'Tech','QCOM':'Tech','TXN':'Tech','AVGO':'Tech','AMAT':'Tech','MU':'Tech','MRVL':'Tech','ARM':'Tech','SMCI':'Tech',
+  'AMZN':'Consumer','TSLA':'Consumer','COST':'Consumer','NKE':'Consumer','SBUX':'Consumer','MCD':'Consumer','HD':'Consumer','MELI':'Consumer','SHOP':'Consumer','UBER':'Consumer',
+  'GOOGL':'Comm','META':'Comm','NFLX':'Comm','DIS':'Comm','CMCSA':'Comm',
+  'JPM':'Finance','BAC':'Finance','GS':'Finance','V':'Finance','MA':'Finance','COIN':'Finance','MSTR':'Finance',
+  'JNJ':'Health','UNH':'Health','LLY':'Health','MRK':'Health','ABBV':'Health','PFE':'Health','REGN':'Health','VRTX':'Health',
   'XOM':'Energy','CVX':'Energy','SLB':'Energy',
-  'NEE':'Utility','DUK':'Utility',
   'CAT':'Industrial','HON':'Industrial','DE':'Industrial','RTX':'Industrial','UNP':'Industrial',
   'CRM':'SaaS','NOW':'SaaS','INTU':'SaaS','ADBE':'SaaS','PANW':'SaaS','CRWD':'SaaS','ZS':'SaaS','DDOG':'SaaS','SNOW':'SaaS','PLTR':'SaaS',
   'PG':'Staples','KO':'Staples','PEP':'Staples',
+  'NQ1!':'Futures','ES1!':'Futures','MNQ1!':'Futures',
 };
 
 function getSector(t) { return SECTORS[t] || 'Other'; }
@@ -379,19 +343,17 @@ function renderWatchlistChips() {
   const container = document.getElementById('watchlist-chips');
   if (!container) return;
   if (watchlist.length === 0) {
-    container.innerHTML = '<span style="font-size:12px;color:var(--muted);">No tickers added yet — click Load defaults to start</span>';
+    container.innerHTML = '<span style="font-size:12px;color:var(--muted);">No tickers added — click Load defaults to start</span>';
     return;
   }
-  container.innerHTML = watchlist.map(t => `
-    <div class="ticker-chip">
-      ${t}
-      <button class="chip-remove" onclick="removeWatchlistTicker('${t}')">×</button>
-    </div>`).join('');
+  container.innerHTML = watchlist.map(t =>
+    '<div class="ticker-chip">' + t + '<button class="chip-remove" onclick="removeWatchlistTicker(\'' + t + '\')">×</button></div>'
+  ).join('');
 }
 
 function addWatchlistTicker() {
   const input = document.getElementById('watchlist-input');
-  const val = input.value.trim().toUpperCase().replace(/[^A-Z.]/g, '');
+  const val = input.value.trim().toUpperCase().replace(/[^A-Z0-9!.]/g, '');
   if (!val) return;
   if (watchlist.includes(val)) { showToast(val + ' already in watchlist'); input.value = ''; return; }
   watchlist.push(val);
@@ -414,40 +376,37 @@ function loadDefaultWatchlist() {
 }
 
 // ── FINNHUB FETCH ──
-async function fetchAV(ticker) {
-  // Timeout helper — kills fetch after 8 seconds
-  const fetchWithTimeout = (url, ms=8000) => {
+async function fetchTicker(t) {
+  const fetchWithTimeout = (url, ms) => {
     const controller = new AbortController();
-    const id = setTimeout(() => controller.abort(), ms);
+    const id = setTimeout(() => controller.abort(), ms || 8000);
     return fetch(url, { signal: controller.signal }).finally(() => clearTimeout(id));
   };
 
   try {
-    // Get quote (current price, change)
-    const quoteUrl = `${FH_BASE}/quote?symbol=${ticker}&token=${FH_KEY}`;
+    // Quote
     let quoteRes;
-    try { quoteRes = await fetchWithTimeout(quoteUrl); }
-    catch(e) { debugLog(ticker, 'Quote timeout/abort: ' + e.message); return null; }
-    if (!quoteRes.ok) { debugLog(ticker, 'Quote HTTP error: ' + quoteRes.status); return null; }
+    try { quoteRes = await fetchWithTimeout(FH_BASE + '/quote?symbol=' + t + '&token=' + FH_KEY); }
+    catch(e) { debugLog(t, 'Quote timeout'); return null; }
+    if (!quoteRes.ok) { debugLog(t, 'Quote error ' + quoteRes.status); return null; }
     const quote = await quoteRes.json();
-    if (!quote.c || quote.c === 0) { debugLog(ticker, 'No quote data — market may be closed or symbol invalid'); return null; }
+    if (!quote.c || quote.c === 0) { debugLog(t, 'No quote data'); return null; }
 
-    const price     = quote.c;
+    const price = quote.c;
     const prevClose = quote.pc;
     const changePct = ((price - prevClose) / prevClose) * 100;
 
-    // Get candles (OHLCV daily — last 90 days)
-    const to   = Math.floor(Date.now() / 1000);
+    // Candles
+    const to = Math.floor(Date.now() / 1000);
     const from = to - (90 * 24 * 60 * 60);
-    const candleUrl = `${FH_BASE}/stock/candle?symbol=${ticker}&resolution=D&from=${from}&to=${to}&token=${FH_KEY}`;
     let candleRes;
-    try { candleRes = await fetchWithTimeout(candleUrl); }
-    catch(e) { debugLog(ticker, 'Candle timeout/abort: ' + e.message); return null; }
-    if (!candleRes.ok) { debugLog(ticker, 'Candle HTTP error: ' + candleRes.status); return null; }
+    try { candleRes = await fetchWithTimeout(FH_BASE + '/stock/candle?symbol=' + t + '&resolution=D&from=' + from + '&to=' + to + '&token=' + FH_KEY); }
+    catch(e) { debugLog(t, 'Candle timeout'); return null; }
+    if (!candleRes.ok) { debugLog(t, 'Candle error ' + candleRes.status); return null; }
     const candles = await candleRes.json();
 
     if (candles.s !== 'ok' || !candles.c || candles.c.length < 20) {
-      debugLog(ticker, 'Not enough candle data: ' + (candles.c ? candles.c.length : 0) + ' days — status: ' + candles.s);
+      debugLog(t, 'Not enough data (' + (candles.c ? candles.c.length : 0) + ' days)');
       return null;
     }
 
@@ -455,18 +414,13 @@ async function fetchAV(ticker) {
     const highs  = candles.h;
     const lows   = candles.l;
     const vols   = candles.v;
-
     const avgVol = vols.slice(-20).reduce((a, b) => a + b, 0) / 20;
 
     // ATR 14
     const atrLen = Math.min(14, closes.length - 1);
     let atrSum = 0;
     for (let i = closes.length - atrLen; i < closes.length; i++) {
-      const tr = Math.max(
-        highs[i] - lows[i],
-        Math.abs(highs[i] - closes[i - 1]),
-        Math.abs(lows[i] - closes[i - 1])
-      );
+      const tr = Math.max(highs[i] - lows[i], Math.abs(highs[i] - closes[i-1]), Math.abs(lows[i] - closes[i-1]));
       atrSum += tr;
     }
     const atr = atrSum / atrLen;
@@ -481,32 +435,30 @@ async function fetchAV(ticker) {
     const bbUpper = sma20 + 2 * std20;
     const bbLower = sma20 - 2 * std20;
     const bbRange = bbUpper - bbLower;
+    const bbPos   = (price - bbLower) / bbRange;
 
-    // BB position 0 = at lower, 1 = at upper
-    const bbPosition  = (price - bbLower) / bbRange;
-    const nearBBLower = bbPosition < 0.30;
-    const nearBBUpper = bbPosition > 0.70;
+    const nearBBLower = bbPos < 0.30;
+    const nearBBUpper = bbPos > 0.70;
     const nearSMA20   = Math.abs(price - sma20) / price < 0.03;
     const nearSMA50   = Math.abs(price - sma50) / price < 0.03;
     const trendUp     = sma5 >= sma20;
     const trendDn     = sma5 < sma20;
 
-    // Setup classification
     let setup = 'watch';
     if      (nearBBLower || (nearSMA20 && trendUp) || (nearSMA50 && trendUp)) setup = 'bounce';
     else if (nearBBUpper || (nearSMA20 && trendDn) || (nearSMA50 && trendDn)) setup = 'reject';
-    else if (bbPosition <= 0.50) setup = 'bounce';
+    else if (bbPos <= 0.50) setup = 'bounce';
     else setup = 'reject';
 
     const potentialUp   = (bbUpper - price) / price * 100;
     const potentialDown = (price - bbLower) / price * 100;
     const potential     = setup === 'bounce' ? potentialUp : potentialDown;
 
-    // Score out of 10
     const minATR   = parseFloat(document.getElementById('sc-atr').value);
     const minVol   = parseFloat(document.getElementById('sc-vol').value) * 1e6;
     const minPrice = parseFloat(document.getElementById('sc-price-min').value);
     const maxPrice = parseFloat(document.getElementById('sc-price-max').value);
+
     let score = 0;
     if (atr >= minATR)                          score += 2;
     if (atr > 12)                               score += 1;
@@ -517,11 +469,12 @@ async function fetchAV(ticker) {
     if (price >= minPrice && price <= maxPrice) score += 1;
     if (Math.abs(changePct) > 1.5)             score += 1;
 
-    debugLog(ticker, 'OK | $' + price.toFixed(2) + ' | ' + setup + ' | score:' + score + ' | atr:' + atr.toFixed(2) + ' | bbPos:' + bbPosition.toFixed(2));
+    debugLog(t, 'OK | $' + price.toFixed(2) + ' | ' + setup + ' | score:' + score + ' | atr:' + atr.toFixed(2) + ' | bbPos:' + bbPos.toFixed(2));
 
-    return { ticker, price, changePct, atr, avgVol, sma20, sma50, bbUpper, bbLower, bbPosition, setup, potentialUp, potentialDown, potential, score, sector: getSector(ticker) };
-  } catch (e) {
-    debugLog(ticker, 'Error: ' + e.message);
+    return { ticker: t, price, changePct, atr, avgVol, sma20, sma50, bbUpper, bbLower, bbPos, setup, potentialUp, potentialDown, potential, score, sector: getSector(t) };
+
+  } catch(e) {
+    debugLog(t, 'Error: ' + e.message);
     return null;
   }
 }
@@ -530,21 +483,16 @@ async function fetchAV(ticker) {
 let screenerResults = [], screenerFilter = 'all', sortCol = 'score', sortDir = -1;
 
 async function runScreener() {
-  // Finnhub has no daily limit
-  if (watchlist.length === 0) {
-    showToast('Add tickers to your watchlist first');
-    return;
-  }
+  if (watchlist.length === 0) { showToast('Add tickers to your watchlist first'); return; }
 
   const btn = document.getElementById('scan-btn');
   btn.disabled = true; btn.classList.add('loading');
   document.getElementById('scan-spinner').style.display = 'block';
   document.getElementById('progress-wrap').style.display = 'block';
   document.getElementById('screener-info-row').style.display = 'none';
+  document.getElementById('debug-panel').style.display = 'none';
+  document.getElementById('debug-log').innerHTML = '';
 
-  const tickersToScan = [...watchlist];
-
-  screenerResults = [];
   const minATR   = parseFloat(document.getElementById('sc-atr').value);
   const minVol   = parseFloat(document.getElementById('sc-vol').value) * 1e6;
   const minPrice = parseFloat(document.getElementById('sc-price-min').value);
@@ -552,35 +500,36 @@ async function runScreener() {
   const setupType = document.getElementById('sc-type').value;
   const minScore  = parseInt(document.getElementById('sc-min-score').value);
 
+  screenerResults = [];
   let scanned = 0, passed = 0;
 
-  // Alpha Vantage free tier = 5 calls/minute, so we space calls 13 seconds apart
-  for (let i = 0; i < tickersToScan.length; i++) {
-    const t = tickersToScan[i];
-    document.getElementById('progress-label').textContent = 'Fetching ' + t + ' (' + (i + 1) + ' / ' + tickersToScan.length + ')...';
-    document.getElementById('progress-fill').style.width = ((i / tickersToScan.length) * 100) + '%';
-    document.getElementById('scan-status').textContent = 'Scanning... ' + (MAX_CALLS - callsUsed) + ' calls remaining today';
+  for (let i = 0; i < watchlist.length; i++) {
+    const t = watchlist[i];
+    document.getElementById('progress-label').textContent = 'Fetching ' + t + ' (' + (i + 1) + ' / ' + watchlist.length + ')...';
+    document.getElementById('progress-fill').style.width = ((i / watchlist.length) * 100) + '%';
+    document.getElementById('scan-status').textContent = 'Scanning ' + (i + 1) + ' of ' + watchlist.length + '...';
 
-    const result = await fetchAV(t);
+    const result = await fetchTicker(t);
     scanned++;
 
     if (result) {
-      const atrPass   = result.atr >= minATR;
-      const volPass   = result.avgVol >= minVol;
-      const pricePass = result.price >= minPrice && result.price <= maxPrice;
-      const scorePass = result.score >= minScore;
-      const typePass  = setupType === 'both' || result.setup === setupType;
-      const pass = atrPass && volPass && pricePass && scorePass && typePass;
+      const pass =
+        result.atr >= minATR &&
+        result.avgVol >= minVol &&
+        result.price >= minPrice &&
+        result.price <= maxPrice &&
+        result.score >= minScore &&
+        (setupType === 'both' || result.setup === setupType);
       if (!pass) {
-        debugLog(result.ticker, 'FILTERED OUT — atr:' + atrPass + ' vol:' + volPass + ' price:' + pricePass + ' score:' + scorePass + '(' + result.score + '>=' + minScore + ') type:' + typePass);
+        debugLog(t, 'Filtered — atr:' + result.atr.toFixed(1) + ' vol:' + (result.avgVol/1e6).toFixed(1) + 'M score:' + result.score);
+      } else {
+        screenerResults.push(result);
+        passed++;
       }
-      if (pass) { screenerResults.push(result); passed++; }
-    } else {
-      debugLog(ticker, 'NULL result returned — fetch failed silently');
     }
 
-    // Finnhub: 60 calls/min, 2 calls per ticker = wait 2s between tickers
-    if (i < tickersToScan.length - 1) {
+    // 2 second gap between tickers — Finnhub 60 calls/min, 2 calls per ticker
+    if (i < watchlist.length - 1) {
       await new Promise(res => setTimeout(res, 2000));
     }
   }
@@ -593,18 +542,17 @@ async function runScreener() {
   renderScreener();
 
   const et = new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }));
-  const p = n => String(n).padStart(2, '0');
-  document.getElementById('info-scanned').textContent   = scanned;
-  document.getElementById('info-passed').textContent    = passed;
-  document.getElementById('info-calls').textContent     = callsUsed + '/25';
-  document.getElementById('info-time').textContent      = p(et.getHours()) + ':' + p(et.getMinutes()) + ' ET';
+  const p  = n => String(n).padStart(2, '0');
+  document.getElementById('info-scanned').textContent = scanned;
+  document.getElementById('info-passed').textContent  = passed;
+  document.getElementById('info-time').textContent    = p(et.getHours()) + ':' + p(et.getMinutes()) + ' ET';
   document.getElementById('screener-info-row').style.display = 'flex';
   document.getElementById('progress-wrap').style.display     = 'none';
-  document.getElementById('scan-status').textContent = 'Done — ' + passed + ' setups found — ' + (MAX_CALLS - callsUsed) + ' calls remaining';
+  document.getElementById('scan-status').textContent = 'Done — ' + passed + ' setups found across ' + scanned + ' tickers';
 
   btn.disabled = false; btn.classList.remove('loading');
   document.getElementById('scan-spinner').style.display = 'none';
-  showToast('Scan complete — ' + passed + ' setups found across ' + scanned + ' tickers');
+  showToast('Scan complete — ' + passed + ' setups found');
 }
 
 function renderScreener() {
@@ -612,40 +560,35 @@ function renderScreener() {
   let data = screenerResults;
   if (screenerFilter !== 'all') data = screenerResults.filter(r => r.setup === screenerFilter);
   if (data.length === 0) {
-    body.innerHTML = '<tr><td colspan="11"><div class="empty-state"><div class="empty-icon">🔍</div><div class="empty-title">No setups matched your filters</div><div class="empty-sub">Try lowering the min score or ATR threshold</div></div></td></tr>';
+    body.innerHTML = '<tr><td colspan="11"><div class="empty-state"><div class="empty-icon">🔍</div><div class="empty-title">No setups matched</div><div class="empty-sub">Try lowering the min score or ATR threshold</div></div></td></tr>';
     return;
   }
-  const sorted = [...data].sort((a, b) => {
-    const av = a[sortCol] ?? 0, bv = b[sortCol] ?? 0;
-    return (av > bv ? 1 : -1) * sortDir;
-  });
+  const sorted = [...data].sort((a, b) => ((a[sortCol] ?? 0) > (b[sortCol] ?? 0) ? 1 : -1) * sortDir);
   body.innerHTML = sorted.map((r, i) => {
-    const rk = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : 'normal';
-    const sc = r.score;
-    const bc = sc >= 8 ? '#22c55e' : sc >= 5 ? '#f59e0b' : '#ef4444';
+    const rk  = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : 'normal';
+    const sc  = r.score;
+    const bc  = sc >= 8 ? '#22c55e' : sc >= 5 ? '#f59e0b' : '#ef4444';
     const pot = r.setup === 'bounce' ? r.potentialUp : r.potentialDown;
     const potStr = r.setup === 'bounce'
-      ? `<span class="up">+${pot.toFixed(2)}%</span>`
-      : r.setup === 'reject'
-      ? `<span class="down">-${pot.toFixed(2)}%</span>`
-      : '—';
+      ? '<span class="up">+' + pot.toFixed(2) + '%</span>'
+      : '<span class="down">-' + pot.toFixed(2) + '%</span>';
     const chgStr = r.changePct >= 0
-      ? `<span class="up">+${r.changePct.toFixed(2)}%</span>`
-      : `<span class="down">${r.changePct.toFixed(2)}%</span>`;
+      ? '<span class="up">+' + r.changePct.toFixed(2) + '%</span>'
+      : '<span class="down">' + r.changePct.toFixed(2) + '%</span>';
     const vol = r.avgVol >= 1e6 ? (r.avgVol / 1e6).toFixed(1) + 'M' : (r.avgVol / 1e3).toFixed(0) + 'K';
-    return `<tr onclick="openChart('${r.ticker}')">
-      <td><div class="rank-badge ${rk}">${i + 1}</div></td>
-      <td><span class="ticker-cell">$${r.ticker}</span></td>
-      <td><span class="sector-pill">${r.sector}</span></td>
-      <td><span class="setup-badge ${r.setup}">${r.setup.toUpperCase()}</span></td>
-      <td><div class="score-bar-wrap"><div class="score-bar"><div class="score-bar-fill" style="width:${sc * 10}%;background:${bc};"></div></div><span class="score-bar-num" style="color:${bc}">${sc}/10</span></div></td>
-      <td class="mono">$${r.price.toFixed(2)}</td>
-      <td>${chgStr}</td>
-      <td class="mono">${r.atr.toFixed(2)}</td>
-      <td class="mono">${vol}</td>
-      <td>${potStr}</td>
-      <td><button class="action-btn" onclick="event.stopPropagation();openChart('${r.ticker}')">Chart →</button></td>
-    </tr>`;
+    return '<tr onclick="openChart(\'' + r.ticker + '\')">'
+      + '<td><div class="rank-badge ' + rk + '">' + (i + 1) + '</div></td>'
+      + '<td><span class="ticker-cell">$' + r.ticker + '</span></td>'
+      + '<td><span class="sector-pill">' + r.sector + '</span></td>'
+      + '<td><span class="setup-badge ' + r.setup + '">' + r.setup.toUpperCase() + '</span></td>'
+      + '<td><div class="score-bar-wrap"><div class="score-bar"><div class="score-bar-fill" style="width:' + (sc * 10) + '%;background:' + bc + ';"></div></div><span class="score-bar-num" style="color:' + bc + '">' + sc + '/10</span></div></td>'
+      + '<td class="mono">$' + r.price.toFixed(2) + '</td>'
+      + '<td>' + chgStr + '</td>'
+      + '<td class="mono">' + r.atr.toFixed(2) + '</td>'
+      + '<td class="mono">' + vol + '</td>'
+      + '<td>' + potStr + '</td>'
+      + '<td><button class="action-btn" onclick="event.stopPropagation();openChart(\'' + r.ticker + '\')">Chart →</button></td>'
+      + '</tr>';
   }).join('');
 }
 
@@ -672,31 +615,23 @@ function renderCard(a) {
   const score = parseInt(a.score) || 0, sc = scoreColor(score);
   const rc = isB ? '#22c55e' : '#ef4444';
   const circ = 2 * Math.PI * 18, dash = circ * (score / 5);
-  return `<div class="alert-card ${tc}" onclick="openChart('${a.ticker}')">
-    <div class="card-top">
-      <div class="ticker-block">
-        <span class="ticker">$${a.ticker}</span>
-        <span class="type-badge ${tc}">${isB ? '▲' : '▼'} ${a.type}</span>
-      </div>
-      <div class="score-ring">
-        <svg width="52" height="52" viewBox="0 0 52 52">
-          <circle cx="26" cy="26" r="18" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="4"/>
-          <circle cx="26" cy="26" r="18" fill="none" stroke="${rc}" stroke-width="4" stroke-dasharray="${dash.toFixed(1)} ${circ.toFixed(1)}" stroke-linecap="round"/>
-        </svg>
-        <span class="score-num ${sc}">${score}/5</span>
-      </div>
-    </div>
-    <div class="metrics-row">
-      <div class="metric"><div class="metric-label">Close</div><div class="metric-val">$${parseFloat(a.close).toFixed(2)}</div></div>
-      <div class="metric"><div class="metric-label">ATR</div><div class="metric-val">${parseFloat(a.atr || 0).toFixed(2)}</div></div>
-      <div class="metric"><div class="metric-label">${isB ? 'UPSIDE' : 'DOWNSIDE'}</div>
-        <div class="metric-val ${isB ? 'up' : 'down'}">${potVal ? (isB ? '+' : '-') + parseFloat(potVal).toFixed(2) + '%' : '—'}</div></div>
-    </div>
-    <div class="card-footer">
-      <span class="timestamp">${a.time || 'just now'}</span>
-      <button class="action-btn" onclick="event.stopPropagation();openChart('${a.ticker}')">View chart →</button>
-    </div>
-  </div>`;
+  return '<div class="alert-card ' + tc + '" onclick="openChart(\'' + a.ticker + '\')">'
+    + '<div class="card-top">'
+    + '<div class="ticker-block"><span class="ticker">$' + a.ticker + '</span>'
+    + '<span class="type-badge ' + tc + '">' + (isB ? '▲' : '▼') + ' ' + a.type + '</span></div>'
+    + '<div class="score-ring"><svg width="52" height="52" viewBox="0 0 52 52">'
+    + '<circle cx="26" cy="26" r="18" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="4"/>'
+    + '<circle cx="26" cy="26" r="18" fill="none" stroke="' + rc + '" stroke-width="4" stroke-dasharray="' + dash.toFixed(1) + ' ' + circ.toFixed(1) + '" stroke-linecap="round"/>'
+    + '</svg><span class="score-num ' + sc + '">' + score + '/5</span></div></div>'
+    + '<div class="metrics-row">'
+    + '<div class="metric"><div class="metric-label">Close</div><div class="metric-val">$' + parseFloat(a.close).toFixed(2) + '</div></div>'
+    + '<div class="metric"><div class="metric-label">ATR</div><div class="metric-val">' + parseFloat(a.atr || 0).toFixed(2) + '</div></div>'
+    + '<div class="metric"><div class="metric-label">' + (isB ? 'UPSIDE' : 'DOWNSIDE') + '</div>'
+    + '<div class="metric-val ' + (isB ? 'up' : 'down') + '">' + (potVal ? (isB ? '+' : '-') + parseFloat(potVal).toFixed(2) + '%' : '—') + '</div></div>'
+    + '</div>'
+    + '<div class="card-footer"><span class="timestamp">' + (a.time || 'just now') + '</span>'
+    + '<button class="action-btn" onclick="event.stopPropagation();openChart(\'' + a.ticker + '\')">View chart →</button></div>'
+    + '</div>';
 }
 
 function renderGrid() {
@@ -714,41 +649,49 @@ function renderGrid() {
 }
 
 function updateStats() {
-  document.getElementById('stat-total').textContent = alerts.length;
-  document.getElementById('stat-bounce').textContent = alerts.filter(a => a.type === 'BOUNCE').length;
-  document.getElementById('stat-reject').textContent = alerts.filter(a => a.type === 'REJECT').length;
+  document.getElementById('stat-total').textContent   = alerts.length;
+  document.getElementById('stat-bounce').textContent  = alerts.filter(a => a.type === 'BOUNCE').length;
+  document.getElementById('stat-reject').textContent  = alerts.filter(a => a.type === 'REJECT').length;
   if (alerts.length > 0) {
     const top = alerts.reduce((a, b) => parseInt(a.score) > parseInt(b.score) ? a : b);
-    document.getElementById('stat-top').textContent = top.score + '/5';
+    document.getElementById('stat-top').textContent        = top.score + '/5';
     document.getElementById('stat-top-ticker').textContent = '$' + top.ticker;
   }
 }
 
 function addAlert(data) {
   if (alerts.find(a => a.ticker === data.ticker && a.type === data.type)) return;
-  alerts.unshift(data); updateStats(); renderGrid();
+  alerts.unshift(data);
+  updateStats();
+  renderGrid();
   showToast((data.type === 'BOUNCE' ? '🟢' : '🔴') + ' ' + data.ticker + ' ' + data.type + ' — Score ' + data.score + '/5');
 }
 
 function filterAlerts(type, btn) {
   alertFilter = type;
   document.querySelectorAll('#tab-alerts .filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active'); renderGrid();
+  btn.classList.add('active');
+  renderGrid();
 }
 
 function clearAlerts() {
   alerts = []; alertFilter = 'all';
   document.querySelectorAll('#tab-alerts .filter-btn').forEach((b, i) => { b.classList.remove('active'); if (i === 0) b.classList.add('active'); });
-  updateStats(); renderGrid();
+  updateStats();
+  renderGrid();
 }
 
-function connectWebhook() {
+function connectWebhook(silent) {
   const url = document.getElementById('webhook-url').value.trim();
-  if (!url.startsWith('https://webhook.site/')) { showToast('Please enter a valid webhook.site URL'); return; }
+  if (!url.startsWith('https://webhook.site/')) {
+    if (!silent) showToast('Please enter a valid webhook.site URL');
+    return;
+  }
+  localStorage.setItem('nevofit_webhook', url);
   const token = url.replace('https://webhook.site/', '');
   document.getElementById('status-dot').className = 'status-dot live';
   document.getElementById('webhook-title').textContent = 'Listening — ' + url;
-  showToast('Connected. Polling every 5 seconds...');
+  if (!silent) showToast('Connected. Polling every 5 seconds...');
   if (pollInterval) clearInterval(pollInterval);
   pollWebhook(token);
   pollInterval = setInterval(() => pollWebhook(token), 5000);
@@ -757,26 +700,31 @@ function connectWebhook() {
 function pollWebhook(token) {
   fetch('https://webhook.site/token/' + token + '/requests?sorting=newest&per_page=25')
     .then(r => r.json())
-    .then(data => { if (!data.data) return; data.data.forEach(req => { try { const b = JSON.parse(req.content); if (b.ticker && b.type) addAlert(b); } catch (e) { } }); })
-    .catch(() => { });
+    .then(data => {
+      if (!data.data) return;
+      data.data.forEach(req => {
+        try { const b = JSON.parse(req.content); if (b.ticker && b.type) addAlert(b); } catch(e) {}
+      });
+    })
+    .catch(() => {});
 }
 
 const SAMPLE = [
-  { ticker: 'NVDA', type: 'BOUNCE', score: '5', close: '138.42', atr: '11.20', measured_up: '6.44', time: '16:00 ET' },
+  { ticker: 'NVDA', type: 'BOUNCE', score: '5', close: '138.42', atr: '11.20', measured_up: '6.44',   time: '16:00 ET' },
   { ticker: 'TSLA', type: 'REJECT', score: '4', close: '409.99', atr: '14.80', measured_down: '3.21', time: '16:00 ET' },
-  { ticker: 'AAPL', type: 'BOUNCE', score: '4', close: '211.30', atr: '9.10', measured_up: '4.18', time: '16:00 ET' },
-  { ticker: 'NFLX', type: 'REJECT', score: '5', close: '1028.40', atr: '28.60', measured_down: '5.72', time: '16:00 ET' },
-  { ticker: 'MSFT', type: 'BOUNCE', score: '3', close: '449.80', atr: '12.30', measured_up: '3.10', time: '16:00 ET' },
+  { ticker: 'AAPL', type: 'BOUNCE', score: '4', close: '211.30', atr: '9.10',  measured_up: '4.18',   time: '16:00 ET' },
+  { ticker: 'NFLX', type: 'REJECT', score: '5', close: '1028.40',atr: '28.60', measured_down: '5.72', time: '16:00 ET' },
+  { ticker: 'MSFT', type: 'BOUNCE', score: '3', close: '449.80', atr: '12.30', measured_up: '3.10',   time: '16:00 ET' },
 ];
 
 function simulateAlerts() {
-  clearAlerts(); let i = 0;
+  clearAlerts();
+  let i = 0;
   const iv = setInterval(() => { if (i >= SAMPLE.length) { clearInterval(iv); return; } addAlert(SAMPLE[i]); i++; }, 400);
 }
 
 function openChart(t) { window.open('https://www.tradingview.com/chart/?symbol=' + t, '_blank'); }
 
-// ── TOAST ──
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.innerHTML = msg + ' <button class="dismiss-btn" onclick="this.parentElement.classList.remove(\'show\')">×</button>';
@@ -787,6 +735,12 @@ function showToast(msg) {
 // ── INIT ──
 renderGrid();
 renderWatchlistChips();
+
+// Auto connect — hardcoded webhook, no setup needed
+const WEBHOOK_URL = 'https://webhook.site/89df8276-1f90-4bcb-98a0-2d57bd202807';
+const savedWebhook = localStorage.getItem('nevofit_webhook') || WEBHOOK_URL;
+document.getElementById('webhook-url').value = savedWebhook;
+connectWebhook(true);
 </script>
 </body>
 </html>
