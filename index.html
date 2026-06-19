@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nevofit Trading Dashboard</title>
+<title>RJX Algo</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap');
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -155,7 +155,7 @@
 <body>
 
 <div class="topbar">
-  <div class="logo"><div class="logo-dot"></div>NEVOFIT / SCANNER</div>
+  <div class="logo"><div class="logo-dot"></div>RJX ALGO</div>
   <div class="topbar-right">
     <span class="market-status" id="market-status">MARKET CLOSED</span>
     <span class="clock" id="clock">--:--:-- ET</span>
@@ -683,12 +683,12 @@ function clearAlerts() {
 
 function connectWebhook(silent) {
   const url = document.getElementById('webhook-url').value.trim();
-  if (!url.startsWith('https://webhook.site/')) {
-    if (!silent) showToast('Please enter a valid webhook.site URL');
+  if (!url.startsWith('https://')) {
+    if (!silent) showToast('Please enter a valid webhook URL');
     return;
   }
   localStorage.setItem('nevofit_webhook', url);
-  const token = url.replace('https://webhook.site/', '');
+  const token = url;
   document.getElementById('status-dot').className = 'status-dot live';
   document.getElementById('webhook-title').textContent = 'Listening — ' + url;
   if (!silent) showToast('Connected. Polling every 5 seconds...');
@@ -698,17 +698,18 @@ function connectWebhook(silent) {
 }
 
 function pollWebhook(token) {
-  // Use allorigins proxy to bypass CORS on webhook.site API
-  const target = 'https://webhook.site/token/' + token + '/requests?sorting=newest&per_page=25';
-  const proxy  = 'https://api.allorigins.win/get?url=' + encodeURIComponent(target);
-  fetch(proxy)
+  // Pipedream stores received requests — poll for latest
+  fetch('https://eo14iawcq02y7m2.m.pipedream.net', {
+    method: 'GET',
+    headers: { 'Accept': 'application/json' }
+  })
     .then(r => r.json())
-    .then(wrapper => {
-      if (!wrapper || !wrapper.contents) return;
-      const data = JSON.parse(wrapper.contents);
-      if (!data.data) return;
-      data.data.forEach(req => {
-        try { const b = JSON.parse(req.content); if (b.ticker && b.type) addAlert(b); } catch(e) {}
+    .then(data => {
+      if (!data) return;
+      // Handle both single object and array
+      const items = Array.isArray(data) ? data : [data];
+      items.forEach(b => {
+        try { if (b.ticker && b.type) addAlert(b); } catch(e) {}
       });
     })
     .catch(() => {});
@@ -742,7 +743,7 @@ renderGrid();
 renderWatchlistChips();
 
 // Auto connect — hardcoded webhook, no setup needed
-const WEBHOOK_URL = 'https://webhook.site/714df484-a50f-4e57-8e54-680f80fff1c9';
+const WEBHOOK_URL = 'https://eo14iawcq02y7m2.m.pipedream.net';
 const savedWebhook = localStorage.getItem('nevofit_webhook') || WEBHOOK_URL;
 document.getElementById('webhook-url').value = savedWebhook;
 connectWebhook(true);
