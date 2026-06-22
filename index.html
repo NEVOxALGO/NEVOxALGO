@@ -688,7 +688,8 @@ function connectWebhook(silent) {
     return;
   }
   localStorage.setItem('nevofit_webhook', url);
-  const token = url.replace('https://webhook.site/', '');
+  // Use hardcoded token for rjxalgo alias since alias doesn't work in API
+  const token = url.includes('rjxalgo') ? WEBHOOK_TOKEN : url.replace('https://webhook.site/', '');
   document.getElementById('status-dot').className = 'status-dot live';
   document.getElementById('webhook-title').textContent = 'Listening — ' + url;
   if (!silent) showToast('Connected. Polling every 5 seconds...');
@@ -742,6 +743,7 @@ renderWatchlistChips();
 
 // Auto connect — hardcoded webhook, no setup needed
 const WEBHOOK_URL = 'https://webhook.site/rjxalgo';
+const WEBHOOK_TOKEN = '14f041c8-d31c-46cf-bb4b-fc7f306d9408';
 const savedWebhook = localStorage.getItem('nevofit_webhook') || WEBHOOK_URL;
 document.getElementById('webhook-url').value = savedWebhook;
 connectWebhook(true);
