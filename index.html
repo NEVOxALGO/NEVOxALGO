@@ -681,26 +681,33 @@ function clearAlerts() {
   renderGrid();
 }
 
+// ── WEBHOOK POLLING (FIXED) ──
 function connectWebhook(silent) {
   const url = document.getElementById('webhook-url').value.trim();
   if (!url.startsWith('https://')) {
     if (!silent) showToast('Please enter a valid webhook URL');
     return;
   }
+  
+  // ✅ FIX: Extract the ID/alias from the URL (everything after webhook.site/)
+  const pollId = url.replace('https://webhook.site/', '').split('?')[0];
+  
   localStorage.setItem('nevofit_webhook', url);
-  // Use hardcoded token for rjxalgo alias since alias doesn't work in API
-  const token = url.includes('rjxalgo') ? WEBHOOK_TOKEN : url.replace('https://webhook.site/', '');
   document.getElementById('status-dot').className = 'status-dot live';
   document.getElementById('webhook-title').textContent = 'Listening — ' + url;
   if (!silent) showToast('Connected. Polling every 5 seconds...');
   if (pollInterval) clearInterval(pollInterval);
-  pollWebhook(token);
-  pollInterval = setInterval(() => pollWebhook(token), 5000);
+  pollWebhook(pollId);
+  pollInterval = setInterval(() => pollWebhook(pollId), 5000);
 }
 
-function pollWebhook(token) {
-  const target = 'https://webhook.site/token/' + token + '/requests?sorting=newest&per_page=50';
+function pollWebhook(pollId) {
+  // ✅ FIX: Use the direct endpoint (works for BOTH alias AND UUID)
+  // Instead of: https://webhook.site/token/UUID/requests
+  // Use: https://webhook.site/{alias}/requests OR https://webhook.site/{UUID}/requests
+  const target = 'https://webhook.site/' + pollId + '/requests?sorting=newest&per_page=50';
   const proxy = 'https://api.allorigins.win/get?url=' + encodeURIComponent(target);
+  
   fetch(proxy)
     .then(r => r.json())
     .then(wrapper => {
@@ -741,10 +748,8 @@ function showToast(msg) {
 renderGrid();
 renderWatchlistChips();
 
-// Auto connect — hardcoded webhook, no setup needed
+// ✅ Auto connect to webhook (use saved or default)
 const WEBHOOK_URL = 'https://webhook.site/rjxalgo';
-const WEBHOOK_TOKEN = '14f041c8-d31c-46cf-bb4b-fc7f306d9408';
-const WEBHOOK_API_KEY = 'f7244d0f-ddac-48c8-9f51-eaa359837eb9';
 const savedWebhook = localStorage.getItem('nevofit_webhook') || WEBHOOK_URL;
 document.getElementById('webhook-url').value = savedWebhook;
 connectWebhook(true);
